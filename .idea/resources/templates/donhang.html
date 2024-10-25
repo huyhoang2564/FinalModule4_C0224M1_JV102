@@ -1,0 +1,29 @@
+<h1>Danh sách đơn hàng</h1>
+<table>
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Mã đơn hàng</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Loại sản phẩm</th>
+        <th>Ngày mua</th>
+        <th>Số lượng</th>
+        <th>Tổng tiền</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="donHang, stat : ${donHangList}">
+        <td th:text="${stat.index + 1}"></td>
+        <td th:text="${donHang.maDonHang}"></td>
+        <td th:text="${donHang.sanPham.tenSp}"></td>
+        <td th:text="${donHang.sanPham.giaSp}"></td>
+        <td th:text="${donHang.sanPham.loaiSanPham.tenLoaiSp}"></td>
+        <td th:text="${#dates.format(donHang.ngayMua, 'dd/MM/yyyy')}"></td>
+        <td th:text="${donHang.soLuong}"></td>
+        <td th:text="${donHang.sanPham.giaSp.multiply(T(java.math.BigDecimal).valueOf(donHang.soLuong))}"></td>
+        <td><a th:href="@{/don-hang/edit/{id}(id=${donHang.maDonHang})}">Chỉnh sửa</a></td>
+    </tr>
+    </tbody>
+</table>

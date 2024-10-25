@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="don_hang" uuid="72941dcd-777b-4b79-a4df-bd431817b369">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>CREATE TABLE don_hang (     ma_don_hang INT AUTO_INCREMENT PRIMARY KEY,     ngay_mua DATETIME NOT NULL,     so_luong INT NOT NULL,     ma_sp INT,     FOREIGN KEY (ma_sp) REFERENCES san_pham(ma_sp) );</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/.idea/src/entities/don_hang</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+<h1>Chỉnh sửa đơn hàng</h1>
+<form th:action="@{/don-hang/edit/{id}(id=${donHang.maDonHang})}" th:object="${donHang}" method="post">
+    <label for="tenSp">Tên sản phẩm:</label>
+    <input type="text" id="tenSp" th:field="*{sanPham.tenSp}">
+
+    <label for="ngayMua">Ngày mua:</label>
+    <input type="datetime-local" id="ngayMua" th:field="*{ngayMua}">
+
+    <label for="soLuong">Số lượng:</label>
+    <input type="number" id="soLuong" th:field="*{soLuong}">
+
+    <button type="submit">Cập nhật</button>
+</form>
